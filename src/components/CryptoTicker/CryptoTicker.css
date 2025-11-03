@@ -1,0 +1,115 @@
+/* src/components/CryptoTicker/CryptoTicker.css */
+.crypto-ticker {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  background: rgba(10, 10, 15, 0.9);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--neon-purple);
+  border-radius: 15px;
+  padding: 1rem;
+  z-index: 1000;
+  box-shadow: 0 0 30px rgba(188, 19, 254, 0.3);
+  min-width: 200px;
+}
+
+.ticker-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(188, 19, 254, 0.3);
+}
+
+.ticker-title {
+  color: var(--neon-purple);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.ticker-indicator {
+  width: 8px;
+  height: 8px;
+  background: var(--neon-green);
+  border-radius: 50%;
+  animation: ticker-pulse 2s infinite;
+}
+
+.ticker-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.ticker-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  animation: ticker-appear 0.5s ease-out;
+}
+
+.coin-symbol {
+  color: var(--stardust);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.coin-price {
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.coin-price.up {
+  color: var(--neon-green);
+}
+
+.coin-price.down {
+  color: var(--neon-pink);
+}
+
+.coin-change {
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.2rem 0.5rem;
+  border-radius: 10px;
+}
+
+.coin-change.up {
+  background: rgba(57, 255, 20, 0.2);
+  color: var(--neon-green);
+}
+
+.coin-change.down {
+  background: rgba(255, 0, 255, 0.2);
+  color: var(--neon-pink);
+}
+
+.ticker-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, transparent, rgba(188, 19, 254, 0.1), transparent);
+  border-radius: 15px;
+  pointer-events: none;
+}
+
+@keyframes ticker-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes ticker-appear {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

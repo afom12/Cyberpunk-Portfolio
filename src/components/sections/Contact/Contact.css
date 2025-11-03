@@ -1,0 +1,510 @@
+/* src/components/sections/Contact/Contact.css */
+.contact-section {
+  background: linear-gradient(135deg, var(--cosmic-purple) 0%, var(--dark-space) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.cyber-lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    linear-gradient(90deg, transparent 49.5%, rgba(0, 245, 255, 0.1) 49.5%, rgba(0, 245, 255, 0.1) 50.5%, transparent 50.5%),
+    linear-gradient(0deg, transparent 49.5%, rgba(0, 245, 255, 0.1) 49.5%, rgba(0, 245, 255, 0.1) 50.5%, transparent 50.5%);
+  background-size: 100px 100px;
+  opacity: 0.2;
+}
+
+.hologram-orb {
+  position: absolute;
+  top: 50%;
+  right: 10%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, var(--neon-blue) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.1;
+  animation: orb-float 8s ease-in-out infinite;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Contact Methods */
+.contact-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.methods-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+}
+
+.methods-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.contact-method {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 245, 255, 0.2);
+  border-radius: 15px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  animation: method-appear 0.6s ease-out;
+}
+
+.contact-method::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 245, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.contact-method:hover::before {
+  left: 100%;
+}
+
+.contact-method:hover {
+  border-color: var(--neon-blue);
+  transform: translateX(10px);
+}
+
+.method-icon {
+  font-size: 2rem;
+  filter: drop-shadow(0 0 10px var(--neon-blue));
+}
+
+.method-info {
+  flex: 1;
+}
+
+.method-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--neon-blue);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.3rem;
+}
+
+.method-value {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--stardust);
+}
+
+.method-glow {
+  position: absolute;
+  top: 50%;
+  right: 1.5rem;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  background: var(--neon-green);
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.contact-method:hover .method-glow {
+  opacity: 1;
+  animation: pulse 2s infinite;
+}
+
+/* Social Links */
+.social-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--neon-pink);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+}
+
+.social-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.social-link {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 0, 255, 0.2);
+  border-radius: 10px;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+  color: var(--stardust);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.social-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 0, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.social-link:hover::before {
+  left: 100%;
+}
+
+.social-link:hover {
+  border-color: var(--neon-pink);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(255, 0, 255, 0.3);
+}
+
+.social-text {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.social-arrow {
+  color: var(--neon-pink);
+  transition: transform 0.3s ease;
+}
+
+.social-link:hover .social-arrow {
+  transform: translateX(5px);
+}
+
+/* Contact Form */
+.contact-form-container {
+  position: relative;
+}
+
+.form-hologram {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 245, 255, 0.3);
+  border-radius: 25px;
+  padding: 2.5rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 
+    0 0 50px rgba(0, 245, 255, 0.2),
+    inset 0 0 50px rgba(0, 245, 255, 0.1);
+}
+
+.form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.form-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.form-status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--neon-green);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.status-indicator {
+  width: 8px;
+  height: 8px;
+  background: var(--neon-green);
+  border-radius: 50%;
+  animation: status-pulse 2s infinite;
+}
+
+.cyber-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.input-group {
+  position: relative;
+}
+
+.cyber-input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 245, 255, 0.3);
+  border-radius: 10px;
+  padding: 1.2rem 1rem 0.5rem;
+  font-size: 1rem;
+  color: var(--stardust);
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.cyber-input:focus {
+  outline: none;
+  border-color: var(--neon-blue);
+  box-shadow: 0 0 20px rgba(0, 245, 255, 0.3);
+}
+
+.cyber-input.textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.input-label {
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-50%);
+  color: var(--neon-blue);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.cyber-input:focus + .input-label,
+.cyber-input:not(:placeholder-shown) + .input-label {
+  top: 0.5rem;
+  font-size: 0.7rem;
+  color: var(--neon-green);
+}
+
+.input-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, transparent, rgba(0, 245, 255, 0.1), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 10px;
+  pointer-events: none;
+}
+
+.cyber-input:focus ~ .input-glow {
+  opacity: 1;
+}
+
+.cyber-submit {
+  background: var(--gradient-primary);
+  border: none;
+  border-radius: 50px;
+  padding: 1.2rem 2rem;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--dark-space);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.cyber-submit:hover:not(.sending) {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0, 245, 255, 0.4);
+}
+
+.cyber-submit.sending {
+  background: rgba(0, 245, 255, 0.3);
+  color: var(--neon-blue);
+  cursor: not-allowed;
+}
+
+.submit-loader {
+  width: 20px;
+  height: 20px;
+  border: 2px solid transparent;
+  border-top: 2px solid var(--neon-blue);
+  border-radius: 50%;
+  animation: submit-spin 1s linear infinite;
+}
+
+.submit-arrow {
+  transition: transform 0.3s ease;
+}
+
+.cyber-submit:hover .submit-arrow {
+  transform: translateX(5px);
+}
+
+.form-scanline {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--neon-green);
+  box-shadow: 0 0 10px var(--neon-green);
+  animation: scan-form 4s linear infinite;
+}
+
+/* Animations */
+@keyframes orb-float {
+  0%, 100% { transform: translateY(-50%) scale(1); }
+  50% { transform: translateY(-60%) scale(1.1); }
+}
+
+@keyframes method-appear {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes status-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes submit-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes scan-form {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(100vh); }
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .hologram-orb {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .form-hologram {
+    padding: 2rem;
+  }
+  
+  .social-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .methods-title,
+  .form-title {
+    font-size: 1.2rem;
+  }
+}
+/* Add this to your existing Contact.css */
+.social-link {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 0, 255, 0.2);
+  border-radius: 10px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  text-decoration: none;
+  color: var(--stardust);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.social-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 0, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.social-link:hover::before {
+  left: 100%;
+}
+
+.social-link:hover {
+  border-color: var(--neon-pink);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(255, 0, 255, 0.3);
+}
+
+.social-icon {
+  font-size: 1.2rem;
+  filter: drop-shadow(0 0 5px var(--neon-pink));
+}
+
+.social-text {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  flex: 1;
+}
+
+.social-arrow {
+  color: var(--neon-pink);
+  transition: transform 0.3s ease;
+}
+
+.social-link:hover .social-arrow {
+  transform: translateX(5px);
+}

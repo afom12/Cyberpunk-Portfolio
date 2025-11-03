@@ -1,0 +1,144 @@
+/* src/styles/globals.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Cyberpunk Color Palette - DARK MODE */
+  --neon-blue: #00f5ff;
+  --neon-purple: #bc13fe;
+  --neon-pink: #ff00ff;
+  --neon-green: #39ff14;
+  --dark-space: #0a0a0f;
+  --deep-space: #12121f;
+  --cosmic-purple: #1a1a2f;
+  --stardust: #e0e0ff;
+  --electric-blue: #0077ff;
+  --matrix-green: #00ff41;
+  
+  /* Gradients */
+  --gradient-primary: linear-gradient(45deg, var(--neon-blue), var(--neon-purple));
+  --gradient-secondary: linear-gradient(45deg, var(--neon-pink), var(--neon-green));
+  --gradient-dark: linear-gradient(135deg, var(--dark-space), var(--cosmic-purple));
+
+  /* Backgrounds & Text */
+  --bg-primary: var(--dark-space);
+  --bg-secondary: var(--deep-space);
+  --text-primary: var(--stardust);
+  --text-secondary: #a0a0c0;
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --card-border: rgba(0, 245, 255, 0.2);
+}
+
+[data-theme="light"] {
+  /* Cyberpunk Color Palette - LIGHT MODE */
+  --neon-blue: #0077ff;
+  --neon-purple: #8a2be2;
+  --neon-pink: #ff0080;
+  --neon-green: #00cc44;
+  --dark-space: #ffffff;
+  --deep-space: #f0f0f5;
+  --cosmic-purple: #e6e6fa;
+  --stardust: #1a1a2f;
+  --electric-blue: #0055cc;
+  --matrix-green: #009933;
+
+  /* Light Mode Specific */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --text-primary: #1a1a2f;
+  --text-secondary: #4a4a6a;
+  --card-bg: rgba(255, 255, 255, 0.8);
+  --card-border: rgba(0, 119, 255, 0.3);
+
+  /* Adjusted Gradients for Light Mode */
+  --gradient-primary: linear-gradient(45deg, var(--neon-blue), var(--neon-purple));
+  --gradient-secondary: linear-gradient(45deg, var(--neon-pink), var(--neon-green));
+  --gradient-dark: linear-gradient(135deg, var(--bg-primary), var(--cosmic-purple));
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Rajdhani', 'Orbitron', sans-serif;
+  line-height: 1.6;
+  color: var(--text-primary);
+  background: var(--bg-primary);
+  overflow-x: hidden;
+  transition: all 0.5s ease;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gradient-primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--neon-pink);
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section {
+  padding: 6rem 0;
+}
+
+.section-title {
+  font-size: 3.5rem;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 4rem;
+  text-transform: uppercase;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: var(--gradient-primary);
+  border-radius: 2px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .section {
+    padding: 4rem 0;
+  }
+  
+  .section-title {
+    font-size: 2.5rem;
+  }
+}
+
+/* Import Cyber Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&display=swap');

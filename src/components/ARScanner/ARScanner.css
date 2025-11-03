@@ -1,0 +1,167 @@
+/* src/components/ARScanner/ARScanner.css */
+.ar-scanner {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 1000;
+}
+
+.ar-btn {
+  background: linear-gradient(45deg, var(--neon-green), var(--neon-blue));
+  border: none;
+  border-radius: 50px;
+  padding: 1rem 2rem;
+  color: var(--dark-space);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 30px rgba(57, 255, 20, 0.5);
+}
+
+.ar-btn.scanning {
+  animation: ar-pulse 1s infinite;
+}
+
+.ar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 10, 15, 0.95);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9998;
+}
+
+.scanner-frame {
+  width: 300px;
+  height: 400px;
+  border: 2px solid var(--neon-green);
+  position: relative;
+  background: rgba(57, 255, 20, 0.05);
+  box-shadow: 0 0 50px rgba(57, 255, 20, 0.3);
+}
+
+.scanner-corner {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--neon-green);
+}
+
+.scanner-corner.top-left {
+  top: -2px;
+  left: -2px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.scanner-corner.top-right {
+  top: -2px;
+  right: -2px;
+  border-left: none;
+  border-bottom: none;
+}
+
+.scanner-corner.bottom-left {
+  bottom: -2px;
+  left: -2px;
+  border-right: none;
+  border-top: none;
+}
+
+.scanner-corner.bottom-right {
+  bottom: -2px;
+  right: -2px;
+  border-left: none;
+  border-top: none;
+}
+
+.scanner-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--neon-green);
+  box-shadow: 0 0 10px var(--neon-green);
+  animation: scan 2s linear infinite;
+}
+
+.scanner-dots {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px;
+}
+
+.scanner-dot {
+  width: 4px;
+  height: 4px;
+  background: var(--neon-green);
+  border-radius: 50%;
+  opacity: 0;
+  animation: dot-appear 2s infinite;
+}
+
+.ar-data {
+  position: absolute;
+  bottom: 2rem;
+  left: 0;
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.data-point {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  background: rgba(57, 255, 20, 0.1);
+  border-radius: 5px;
+}
+
+.data-label {
+  color: var(--neon-green);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.data-value {
+  color: var(--stardust);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+@keyframes ar-pulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 30px rgba(57, 255, 20, 0.5); }
+  50% { transform: scale(1.05); box-shadow: 0 0 50px rgba(57, 255, 20, 0.8); }
+}
+
+@keyframes scan {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(400px); }
+}
+
+@keyframes dot-appear {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}

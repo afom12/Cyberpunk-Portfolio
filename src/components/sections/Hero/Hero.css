@@ -1,0 +1,553 @@
+/* src/components/sections/Hero/Hero.css */
+.hero {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--dark-space) 0%, var(--cosmic-purple) 50%, var(--deep-space) 100%);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  color: var(--stardust);
+  padding-top: 80px; /* Add padding to push content below header */
+}
+
+/* Rest of your existing Hero.css remains the same */
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.floating-shapes {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.shape {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--neon-blue) 0%, transparent 70%);
+  animation: float 6s ease-in-out infinite;
+}
+
+.shape-1 {
+  width: 200px;
+  height: 200px;
+  top: 10%;
+  left: 10%;
+  animation-delay: 0s;
+  background: radial-gradient(circle, var(--neon-purple) 0%, transparent 70%);
+}
+
+.shape-2 {
+  width: 150px;
+  height: 150px;
+  top: 60%;
+  right: 10%;
+  animation-delay: 2s;
+  background: radial-gradient(circle, var(--neon-pink) 0%, transparent 70%);
+}
+
+.shape-3 {
+  width: 100px;
+  height: 100px;
+  bottom: 20%;
+  left: 20%;
+  animation-delay: 4s;
+  background: radial-gradient(circle, var(--neon-green) 0%, transparent 70%);
+}
+
+.shape-4 {
+  width: 180px;
+  height: 180px;
+  top: 30%;
+  right: 20%;
+  animation-delay: 1s;
+}
+
+.grid-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    linear-gradient(90deg, transparent 95%, rgba(0, 245, 255, 0.1) 95%),
+    linear-gradient(0deg, transparent 95%, rgba(0, 245, 255, 0.1) 95%);
+  background-size: 50px 50px;
+  opacity: 0.3;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  margin-top: 2rem; /* Additional margin to push content down */
+}
+
+.greeting {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.hello {
+  font-size: 1.5rem;
+  font-weight: 300;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--neon-blue);
+}
+
+.pulse-dot {
+  width: 12px;
+  height: 12px;
+  background: var(--neon-green);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+.hero-title {
+  font-size: 4.5rem;
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.name-gradient {
+  background: linear-gradient(45deg, var(--neon-blue), var(--neon-purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.name-glow {
+  text-shadow: 0 0 30px var(--neon-blue), 0 0 60px var(--neon-purple);
+}
+
+.typing-container {
+  margin-bottom: 2rem;
+}
+
+.hero-subtitle {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--neon-pink);
+  min-height: 2.5rem;
+}
+
+.cursor {
+  animation: blink 1s infinite;
+  color: var(--neon-green);
+}
+
+.hero-description {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  margin-bottom: 3rem;
+  max-width: 500px;
+}
+
+.highlight {
+  background: linear-gradient(45deg, var(--neon-pink), var(--neon-blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+.cta-btn {
+  position: relative;
+  padding: 1.2rem 2.5rem;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.cta-btn.primary {
+  background: linear-gradient(45deg, var(--neon-blue), var(--neon-purple));
+  color: var(--dark-space);
+}
+
+.cta-btn.secondary {
+  background: transparent;
+  color: var(--neon-green);
+  border: 2px solid var(--neon-green);
+}
+
+.btn-glow {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  transition: left 0.5s ease;
+}
+
+.cta-btn:hover .btn-glow {
+  left: 100%;
+}
+
+.cta-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0, 245, 255, 0.3);
+}
+
+.hero-stats {
+  display: flex;
+  gap: 3rem;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 900;
+  background: linear-gradient(45deg, var(--neon-blue), var(--neon-pink));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--stardust);
+  opacity: 0.8;
+}
+
+/* Avatar Section */
+.hero-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.avatar-container {
+  position: relative;
+  width: 400px;
+  height: 400px;
+}
+
+.avatar-main {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(0, 245, 255, 0.1), rgba(188, 19, 254, 0.1));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  position: relative;
+  overflow: hidden;
+}
+
+.avatar-main::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, var(--neon-blue), var(--neon-purple), var(--neon-pink));
+  border-radius: 50%;
+  z-index: -1;
+  animation: rotate 3s linear infinite;
+}
+
+.avatar-glitch {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, var(--neon-blue), var(--neon-purple));
+  border-radius: 50%;
+  opacity: 0;
+  animation: glitch 4s infinite;
+  mix-blend-mode: screen;
+}
+
+.code-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.code-line {
+  width: 200px;
+  height: 4px;
+  background: var(--neon-green);
+  border-radius: 2px;
+  animation: scan 2s ease-in-out infinite;
+}
+
+.code-line:nth-child(2) { animation-delay: 0.5s; }
+.code-line:nth-child(3) { animation-delay: 1s; }
+.code-line:nth-child(4) { animation-delay: 1.5s; }
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  color: var(--neon-blue);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+.scroll-line {
+  width: 2px;
+  height: 50px;
+  background: linear-gradient(to bottom, var(--neon-blue), transparent);
+  animation: scroll-bounce 2s infinite;
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(180deg); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.1); }
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes glitch {
+  0%, 100% { opacity: 0; transform: translate(0); }
+  5% { opacity: 0.3; transform: translate(-5px, -5px); }
+  10% { opacity: 0; }
+  15% { opacity: 0.3; transform: translate(5px, 5px); }
+  20% { opacity: 0; }
+}
+
+@keyframes scan {
+  0%, 100% { transform: scaleX(0); opacity: 0; }
+  50% { transform: scaleX(1); opacity: 1; }
+}
+
+@keyframes scroll-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 3rem;
+    margin-top: 1rem;
+  }
+  
+  .hero-title {
+    font-size: 3rem;
+  }
+  
+  .avatar-container {
+    width: 300px;
+    height: 300px;
+  }
+  
+  .hero-stats {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 70px; /* Slightly less padding on mobile */
+  }
+  
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .hero-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .cta-btn {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .hero-stats {
+    gap: 2rem;
+  }
+  
+  .stat-number {
+    font-size: 2rem;
+  }
+  
+  .hero-content {
+    margin-top: 0.5rem;
+  }
+}
+/* Add these styles to your existing Hero.css */
+
+.profile-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  position: relative;
+  z-index: 2;
+  filter: grayscale(0.2) contrast(1.1);
+  transition: all 0.3s ease;
+}
+
+.avatar-main:hover .profile-photo {
+  filter: grayscale(0) contrast(1.2) brightness(1.1);
+  transform: scale(1.02);
+}
+
+.photo-frame {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  border: 2px solid transparent;
+  background: linear-gradient(45deg, var(--neon-blue), var(--neon-purple), var(--neon-pink));
+  border-radius: 50%;
+  z-index: 1;
+  animation: rotate 3s linear infinite;
+  opacity: 0.7;
+}
+
+/* Remove or comment out the old code-lines since we're using a photo */
+.code-lines {
+  display: none;
+}
+/* Add these updates to your existing Hero.css */
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 4rem;
+  flex-wrap: wrap;
+}
+
+.cta-btn {
+  position: relative;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 180px;
+  justify-content: center;
+}
+
+.cta-btn.primary {
+  background: linear-gradient(45deg, var(--neon-blue), var(--neon-purple));
+  color: var(--dark-space);
+  flex: 2;
+}
+
+.cta-btn.secondary {
+  background: transparent;
+  color: var(--neon-green);
+  border: 2px solid var(--neon-green);
+  flex: 1;
+}
+
+/* Photo Styles */
+.profile-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  position: relative;
+  z-index: 2;
+  filter: grayscale(0.2) contrast(1.1);
+  transition: all 0.3s ease;
+}
+
+.avatar-main:hover .profile-photo {
+  filter: grayscale(0) contrast(1.2) brightness(1.1);
+  transform: scale(1.02);
+}
+
+.photo-frame {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  border: 2px solid transparent;
+  background: linear-gradient(45deg, var(--neon-blue), var(--neon-purple), var(--neon-pink));
+  border-radius: 50%;
+  z-index: 1;
+  animation: rotate 3s linear infinite;
+  opacity: 0.7;
+}
+
+/* Hide the old code lines */
+.code-lines {
+  display: none;
+}
+
+/* Responsive buttons */
+@media (max-width: 768px) {
+  .hero-actions {
+    flex-direction: column;
+  }
+  
+  .cta-btn {
+    width: 100%;
+    min-width: auto;
+  }
+}
