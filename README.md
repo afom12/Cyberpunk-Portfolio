@@ -1,4 +1,4 @@
-# 🎮 Afomiya Cyberpunk Portfolio
+# 🎮 AfoCyberpunk Portfolio
 
 <div align="center">
 
