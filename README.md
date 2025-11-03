@@ -2,7 +2,6 @@
 
 <div align="center">
 
-![Portfolio Preview](https://img.shields.io/badge/🚀-Live_Portfolio-00f5ff?style=for-the-badge)
 ![React](https://img.shields.io/badge/⚡-React-61DAFB?style=for-the-badge&logo=react)
 ![Cyberpunk](https://img.shields.io/badge/🎮-Cyberpunk_Theme-bc13fe?style=for-the-badge)
 
