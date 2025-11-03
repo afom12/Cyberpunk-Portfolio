@@ -1,70 +1,92 @@
-# Getting Started with Create React App
+# 🎮 Afomiya Ketsella - Cyberpunk Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<div align="center">
 
-## Available Scripts
+![Portfolio Preview](https://img.shields.io/badge/🚀-Live_Portfolio-00f5ff?style=for-the-badge)
+![React](https://img.shields.io/badge/⚡-React-61DAFB?style=for-the-badge&logo=react)
+![Cyberpunk](https://img.shields.io/badge/🎮-Cyberpunk_Theme-bc13fe?style=for-the-badge)
 
-In the project directory, you can run:
+**A futuristic, interactive portfolio showcasing my journey as a Software Developer**
 
-### `npm start`
+[![GitHub](https://img.shields.io/badge/💻-Source_Code-ff00ff?style=for-the-badge&logo=github)](https://github.com/afom12/portfolio)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+</div>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## ✨ **Features**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<div align="center">
 
-### `npm run build`
+| 🎨 Visual Design | ⚡ Interactions | 🛠 Technical |
+|:---:|:---:|:---:|
+| **Cyberpunk Aesthetic** <br> Neon colors & glitch effects | **Smooth Animations** <br> Framer Motion powered | **Modern React** <br> Hooks & Context API |
+| **Dark/Light Mode** <br> Theme switching | **Particle Effects** <br> Interactive background | **Responsive Design** <br> Mobile optimized |
+| **Holographic UI** <br> Glass morphism | **Typewriter Effect** <br> Dynamic text | **CSS Variables** <br> Easy customization |
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+</div>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🎯 **Live Demo**
 
-### `npm run eject`
+<div align="center">
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### **🌐 [Visit Portfolio Website](https://your-portfolio-url.netlify.app)**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+</div>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 🛠 **Tech Stack**
 
-## Learn More
+### **Frontend**
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### **Styling & Animation**
+![Styled Components](https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white)
+![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white)
+![Canvas API](https://img.shields.io/badge/Canvas_API-FF6B6B?style=for-the-badge&logo=html5&logoColor=white)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### **Tools & Deployment**
+![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+![Netlify](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)
+![VSCode](https://img.shields.io/badge/VSCode-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white)
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 🎮 **Portfolio Sections**
 
-### Analyzing the Bundle Size
+| Section | Description | Features |
+|---------|-------------|----------|
+| **🎯 Hero** | Introduction & main call-to-action | Typewriter effect, animated background, interactive buttons |
+| **👨‍💻 About** | Personal story & skills overview | Cyber-stats, neural network visualization |
+| **🚀 Projects** | Featured work showcase | Holographic cards, live demos, GitHub links |
+| **⚡ Skills** | Technical capabilities | Animated progress bars, tech radar |
+| **📞 Contact** | Get in touch form | Working contact form, social links |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+## 🚀 **Quick Start**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### **Prerequisites**
+- Node.js (v14 or higher)
+- npm or yarn
 
-### Advanced Configuration
+### **Installation**
+```bash
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+# Clone the repository
+git clone https://github.com/afom12/portfolio.git
 
-### Deployment
+# Navigate to project directory
+cd portfolio
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+# Install dependencies
+npm install
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Start development server
+npm start
