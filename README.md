@@ -1,4 +1,4 @@
-# 🎮 Afomiya KetseCyberpunk Portfolio
+# 🎮 Afomiya KetCyberpunk Portfolio
 
 <div align="center">
 
