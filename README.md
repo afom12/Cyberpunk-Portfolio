@@ -1,4 +1,4 @@
-# 🎮 Afomiya Ketsella - Cyberpunk Portfolio
+# 🎮 Afomiya KetsellaCyberpunk Portfolio
 
 <div align="center">
 
