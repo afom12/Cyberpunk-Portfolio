@@ -47,7 +47,7 @@ const Contact = () => {
     },
     {
       platform: "Twitter",
-      url: "https://twitter.com/afomi12", // Change to your Twitter
+      url: "https://twitter.com/@Afomi_K", // Change to your Twitter
       icon: "🐦"
     },
     {

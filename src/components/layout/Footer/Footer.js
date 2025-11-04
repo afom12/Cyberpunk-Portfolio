@@ -11,7 +11,7 @@ const Footer = () => {
           <div className="footer-links">
             <a href="https://github.com/afom12" target="_blank" rel="noopener noreferrer">GitHub</a>
             <a href="https://linkedin.com/in/afom12" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            <a href="https://twitter.com/afom12" target="_blank" rel="noopener noreferrer">Twitter</a>
+            <a href="https://twitter.com/@Afomi_K" target="_blank" rel="noopener noreferrer">Twitter</a>
           </div>
         </div>
       </div>
