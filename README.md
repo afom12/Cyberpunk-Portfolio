@@ -5,9 +5,11 @@
 ![React](https://img.shields.io/badge/⚡-React-61DAFB?style=for-the-badge&logo=react)
 ![Cyberpunk](https://img.shields.io/badge/🎮-Cyberpunk_Theme-bc13fe?style=for-the-badge)
 
+
 **A futuristic, interactive portfolio showcasing my journey as a Software Developer**
 
 [![GitHub](https://img.shields.io/badge/💻-Source_Code-ff00ff?style=for-the-badge&logo=github)](https://github.com/afom12/portfolio)
+![Netlify](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)
 
 </div>
 
@@ -31,7 +33,7 @@
 
 <div align="center">
 
-### **🌐 [Visit Portfolio Website](https://your-portfolio-url.netlify.app)**
+### **🌐 [Visit Portfolio Website](https://cyberpunkportfolio.netlify.app/)**
 
 </div>
 
@@ -76,16 +78,25 @@
 - npm or yarn
 
 ### **Installation**
-```bash
+    ```bash
 
-# Clone the repository
-git clone https://github.com/afom12/portfolio.git
+       # Clone the repository
+      git clone https://github.com/afom12/portfolio.git
 
-# Navigate to project directory
-cd portfolio
+    # Navigate to project directory
+    cd portfolio
 
-# Install dependencies
-npm install
+    # Install dependencies
+     npm install
 
-# Start development server
-npm start
+    # Start development server
+    npm start
+
+<div align="center">
+
+  Built with 💙 and ☕ by Afomiya Ketsella
+https://komarev.com/ghpvc/?username=afom12&color=00f5ff&style=for-the-badge&label=%F0%9F%9A%80+PORTFOLIO+VISITORS
+
+⭐ Don't forget to star this repo if you found it helpful!
+
+</div> ```
