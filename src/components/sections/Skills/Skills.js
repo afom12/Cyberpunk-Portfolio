@@ -40,47 +40,62 @@ const Skills = () => {
     return () => clearInterval(interval);
   }, []);
 
+  // New skill level system - much better than percentages!
+  const skillLevels = {
+    EXPERT: { label: "EXPERT", icon: "★★★★★", color: "#39ff14" },
+    ADVANCED: { label: "ADVANCED", icon: "★★★★☆", color: "#00f5ff" },
+    INTERMEDIATE: { label: "INTERMEDIATE", icon: "★★★☆☆", color: "#bc13fe" },
+    BEGINNER: { label: "BEGINNER", icon: "★★☆☆☆", color: "#ff00ff" },
+    EXPLORING: { label: "EXPLORING", icon: "★☆☆☆☆", color: "#007acc" }
+  };
+
   const skillCategories = [
     {
       title: "FRONTEND",
       icon: "💻",
       skills: [
-        { name: "React", level: 95, color: "#00f5ff" },
-        { name: "JavaScript", level: 90, color: "#007acc" },
-        { name: "Tailwind CSS", level: 85, color: "#bc13fe" },
-        { name: "Figma", level: 80, color: "#ff00ff" },
-        { name: "CSS3", level: 95, color: "#39ff14" }
+        { name: "React", level: "EXPERT", color: "#00f5ff" },
+        { name: "JavaScript", level: "ADVANCED", color: "#007acc" },
+        { name: "Tailwind CSS", level: "ADVANCED", color: "#bc13fe" },
+        { name: "Figma", level: "INTERMEDIATE", color: "#ff00ff" },
+        { name: "CSS3", level: "EXPERT", color: "#39ff14" },
+        { name: "HTML5", level: "EXPERT", color: "#00f5ff" }
       ]
     },
     {
       title: "BACKEND",
       icon: "⚡",
       skills: [
-        { name: "Node.js", level: 90, color: "#00f5ff" },
-        { name: "Python", level: 85, color: "#007acc" },
-        { name: "PostgreSQL", level: 80, color: "#bc13fe" },
-        { name: "MongoDB", level: 75, color: "#ff00ff" },
-        { name: "Docker", level: 85, color: "#39ff14" }
+        { name: "Node.js", level: "ADVANCED", color: "#00f5ff" },
+        { name: "Python", level: "INTERMEDIATE", color: "#007acc" },
+        { name: "PostgreSQL", level: "INTERMEDIATE", color: "#bc13fe" },
+        { name: "MongoDB", level: "INTERMEDIATE", color: "#ff00ff" },
+        { name: "Express.js", level: "ADVANCED", color: "#39ff14" },
+        { name: "REST APIs", level: "ADVANCED", color: "#00f5ff" }
       ]
     },
     {
-      title: "Collaboration Tools",
-      icon: "⚙️",
+      title: "TOOLS & PLATFORMS",
+      icon: "🛠️",
       skills: [
-        { name: "Git & GitHub", level: 80, color: "#00f5ff" },
-        { name: "VS Code", level: 75, color: "#007acc" },
-        { name: "Cursor AI", level: 70, color: "#bc13fe" },
-        { name: "Postman", level: 85, color: "#ff00ff" }
+        { name: "Git & GitHub", level: "ADVANCED", color: "#00f5ff" },
+        { name: "VS Code", level: "EXPERT", color: "#007acc" },
+        { name: "Cursor AI", level: "INTERMEDIATE", color: "#bc13fe" },
+        { name: "Postman", level: "ADVANCED", color: "#ff00ff" },
+        { name: "Netlify", level: "ADVANCED", color: "#39ff14" },
+        { name: "Firebase", level: "INTERMEDIATE", color: "#00f5ff" }
       ]
     },
     {
-      title: "TECHNOLOGIES",
+      title: "EMERGING TECH",
       icon: "🚀",
       skills: [
-        { name: "AI/ML", level: 80, color: "#00f5ff" },
-        { name: "Blockchain", level: 75, color: "#007acc" },
-        { name: "Web3", level: 70, color: "#bc13fe" },
-        { name: "Cybersecurity", level: 85, color: "#ff00ff" }
+        { name: "AI/ML", level: "EXPLORING", color: "#00f5ff" },
+        { name: "Blockchain", level: "EXPLORING", color: "#007acc" },
+        { name: "Web3", level: "BEGINNER", color: "#bc13fe" },
+        { name: "Cybersecurity", level: "INTERMEDIATE", color: "#ff00ff" },
+        { name: "IoT", level: "BEGINNER", color: "#39ff14" },
+        { name: "Cloud Computing", level: "INTERMEDIATE", color: "#00f5ff" }
       ]
     }
   ];
@@ -107,13 +122,26 @@ const Skills = () => {
                   <div key={skill.name} className="skill-item">
                     <div className="skill-info">
                       <span className="skill-name">{skill.name}</span>
-                      <span className="skill-percent">{skill.level}%</span>
+                      <div className="skill-level">
+                        <span 
+                          className="skill-stars"
+                          style={{ color: skillLevels[skill.level].color }}
+                        >
+                          {skillLevels[skill.level].icon}
+                        </span>
+                        <span 
+                          className="skill-label"
+                          style={{ color: skillLevels[skill.level].color }}
+                        >
+                          {skillLevels[skill.level].label}
+                        </span>
+                      </div>
                     </div>
                     <div className="skill-bar">
                       <div 
                         className="skill-progress"
                         style={{ 
-                          width: `${skill.level}%`,
+                          width: `${getProgressWidth(skill.level)}%`,
                           background: `linear-gradient(90deg, ${skill.color}, ${skill.color}00)`
                         }}
                       >
@@ -147,9 +175,38 @@ const Skills = () => {
             </div>
           </div>
         </div>
+
+        {/* Skill Legend */}
+        <div className="skill-legend">
+          <h4 className="legend-title">PROFICIENCY SCALE</h4>
+          <div className="legend-items">
+            {Object.entries(skillLevels).map(([key, level]) => (
+              <div key={key} className="legend-item">
+                <span className="legend-stars" style={{ color: level.color }}>
+                  {level.icon}
+                </span>
+                <span className="legend-label" style={{ color: level.color }}>
+                  {level.label}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
+};
+
+// Helper function to convert level to progress width
+const getProgressWidth = (level) => {
+  const widthMap = {
+    "EXPERT": 95,
+    "ADVANCED": 80,
+    "INTERMEDIATE": 65,
+    "BEGINNER": 45,
+    "EXPLORING": 30
+  };
+  return widthMap[level] || 50;
 };
 
 export default Skills;
