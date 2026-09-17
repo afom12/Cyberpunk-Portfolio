@@ -33,7 +33,7 @@
 
 <div align="center">
 
-### **🌐 [Visit Portfolio Website](https://afomiyas12.netlify.app/)**
+### **🌐 [Visit Portfolio Website](https://afomiyas.netlify.app)**
 
 </div>
 
